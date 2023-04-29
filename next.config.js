@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+module.exports = {
   reactStrictMode: true,
+  images: {
+    domains: ['firebasestorage.googleapis.com', 'deno-avatar.deno.dev']
+  }
 }
 
-module.exports = nextConfig

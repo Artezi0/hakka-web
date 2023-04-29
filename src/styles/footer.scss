@@ -1,0 +1,267 @@
+@import 'var';
+
+.footer { 
+  z-index: 100;
+  
+  a {    
+    &:hover {
+      color: $red-primary;
+    }
+  }
+}
+
+@media screen and (min-width: 1440px ) {
+  .footer {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    background: $text-primary;
+    color: $sf-1;
+    padding: 40px 156px;
+    user-select: none;
+  
+    &_desc,
+    &_list {
+      width: 50%;
+    }
+  
+    &_desc {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;    
+      gap: 10px;
+  
+      &-body {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+  
+        a { text-decoration: none; }
+        small { color: $text-secondary; }
+        p {
+          width: 100%;
+          text-align: justify;
+        }
+  
+        .subheading {
+          display: flex;
+          gap: 10px;
+          
+        }
+      }
+    }
+  
+    &_list {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+  
+      ul {
+        text-align: right;
+        color: $text-secondary;
+  
+        p {
+          padding-bottom: 10px;
+        }
+  
+        a {
+          color: inherit;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1439px) and (min-width: 1240px) {
+  .footer {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    background: $text-primary;
+    color: $sf-1;
+    padding: 40px 200px;
+    user-select: none;
+  
+    &_desc,
+    &_list {
+      width: 50%;
+    }
+  
+    &_desc {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;    
+      gap: 10px;
+  
+      &-body {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+  
+        a { text-decoration: none; }
+        small { color: $text-secondary; }
+        p {
+          width: 100%;
+          text-align: justify;
+        }
+  
+        .subheading {
+          display: flex;
+          gap: 10px;
+          
+        }
+      }
+    }
+  
+    &_list {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+  
+      ul {
+        text-align: right;
+        color: $text-secondary;
+  
+        p {
+          padding-bottom: 10px;
+        }
+  
+        a {
+          color: inherit;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1239px) and (min-width: 905px) {
+  .footer {
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    background: $text-primary;
+    color: $sf-1;
+    padding: 40px 76px;
+    user-select: none;
+  
+    &_desc,
+    &_list {
+      width: 50%;
+    }
+  
+    &_desc {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;    
+      gap: 10px;
+  
+      &-body {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+  
+        a { text-decoration: none; }
+        small { color: $text-secondary; }
+        p {
+          width: 100%;
+          text-align: justify;
+        }
+  
+        .subheading {
+          display: flex;
+          gap: 10px;
+          
+        }
+      }
+    }
+  
+    &_list {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+  
+      ul {
+        text-align: right;
+        color: $text-secondary;
+  
+        p {
+          padding-bottom: 10px;
+        }
+  
+        a {
+          color: inherit;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 904px) {
+  .footer {
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    background: $text-primary;
+    color: $sf-1;
+    padding: 40px 60px;
+    user-select: none;
+  
+    &_desc,
+    &_list {
+      width: 50%;
+    }
+  
+    &_desc {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;    
+      gap: 10px;
+  
+      &-body {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+  
+        a { text-decoration: none; }
+        small { color: $text-secondary; }
+        p {
+          width: 100%;
+          text-align: justify;
+        }
+  
+        .subheading {
+          display: flex;
+          gap: 10px;
+          
+        }
+      }
+    }
+  
+    &_list {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+  
+      ul {
+        text-align: right;
+        color: $text-secondary;
+  
+        p {
+          padding-bottom: 10px;
+        }
+  
+        a {
+          color: inherit;
+        }
+      }
+    }
+  }
+}

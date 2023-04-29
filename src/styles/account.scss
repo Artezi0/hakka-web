@@ -1,0 +1,408 @@
+@import 'var';
+
+.account {
+  width: 100%;
+  height: calc(100vh - 100px);
+  padding: 0 156px;
+  
+  &_details {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 40px 0;
+    user-select: none;
+    gap: 20px;
+    
+    &-avatar {
+      width: 100px;
+      aspect-ratio: 1/1;
+      border-radius: 50%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    &-information {
+      height: 100%;
+      
+      .information_btn {
+        display: flex;
+        gap: 10px;
+        font-weight: 600;
+
+        .edit-btn {
+          color: $text-secondary;
+          cursor: pointer;
+        }
+        
+        .logout-btn {
+          color: $red-primary;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  &_activities {
+    display: flex;
+    height: 65%;
+
+    &-fav {
+      width: 50%;
+      border-right: 1px solid $sf-3;
+      padding: 20px 40px 20px 0px;
+      
+      .fav_header {
+        user-select: none;
+      }
+    }
+    
+    &-order {
+      width: 50%;
+      padding: 20px 0px 20px 40px;
+      
+      .oder_header {
+        user-select: none;
+      }
+    }
+  }
+}
+
+// Sign Up
+.signup {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+
+  &_container {
+    width: 25em;  
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+    &-header {
+      text-align: center;
+      h2 {
+        margin-bottom: 10px;
+      }
+
+      a {
+        font-size: 14px;
+        font-weight: 600;
+        text-decoration: none;
+        color: $red-primary;
+      }
+    }
+
+    &-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .error {
+        text-align: center;
+      }
+
+      .group {
+        display: flex;
+        width: 100%;
+        gap: 10px;
+
+        input {
+          width: 50%;
+        }
+      }
+
+      .group2 {
+        display: flex;
+        width: 100%;
+        gap: 10px;
+
+        .telp-code {
+          width: 20%;
+          font-size: 14px;
+          font-weight: 600;
+          background: $sf-2;
+          color: $text-secondary;
+          height: 100%;
+          border-radius: 5px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 5px;
+        }
+
+        input {
+          width: 80%;
+        }
+      }
+      .btn1 {
+        margin-top: 10px;
+      }
+    }
+
+    &-others {
+      text-align: center;
+    }
+
+    .footnote {
+      text-align: center;
+    }
+  }
+}
+
+// Sign In
+.signin {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+
+  &_container {
+    width: 22em;  
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+    &-header {
+      text-align: center;
+      h2 {
+        margin-bottom: 10px;
+      }
+
+      a {
+        font-size: 14px;
+        font-weight: 600;
+        text-decoration: none;
+        color: $red-primary;
+      }
+    }
+
+    &-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .error {
+        text-align: center;
+      }
+
+      .btn1 {
+        margin-top: 10px;
+      }
+    }
+
+    &-others {
+      text-align: center;
+    }
+  }
+}
+
+.pass {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+
+  &_container {
+    width: 25em;  
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+    &-header {
+      text-align: center;
+
+      h2 {
+        margin-bottom: 10px;
+      }
+
+      a {
+        font-size: 14px;
+        font-weight: 600;
+        text-decoration: none;
+        color: $red-primary;
+      }
+    }
+
+    &-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .error {
+        text-align: center;
+      }
+
+      .btn1 {
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+.edit {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  padding: 20px 40px;
+  user-select: none;
+
+  .information {
+    height: 100%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    border-right: 1px solid $sf-3;
+    padding-right: 20px;
+
+    &_avatar {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .avatar {
+        width: 6em;
+        aspect-ratio: 1/1;
+        overflow: hidden;
+        border-radius: 50%;
+        position: relative;
+        margin: 0px auto 20px auto;
+      }
+
+      input {
+        display: none;
+      }
+
+      .btn1 {
+        cursor: pointer;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 0px;
+        font-family: $inter;
+        font-size: 14px;
+      }
+
+      .footnote {
+        text-align: justify;
+      }
+    }
+
+    &_change {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      p {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+      }
+    }
+  }
+
+  .details {
+    height: 100%;
+    width: 70%;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &_bio {
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;      
+      
+      .react-select-container {
+        width: 100%;
+      }
+
+      &-date {
+        display: flex;
+        gap: 10px;
+
+        input[name="day"] {
+          width: 15%;
+        }
+
+        input[name="year"] {
+          width: 25%;
+        }
+
+        .react-select-container {
+          width: 60%;
+        }
+      }
+    }
+
+    &_contact {
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .react-select-container {
+        width: 100%;
+      }
+      
+      textarea {
+        width: 100%;
+        height: 10em;
+      }
+
+      .telp {
+        display: flex;
+        width: 100%;
+        gap: 10px;
+
+        &_code {
+          width: fit-content;
+          padding: 0 10px;
+          font-size: 14px;
+          font-weight: 600;
+          background: $sf-2;
+          color: $text-secondary;
+          height: 100%;
+          border-radius: 5px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 5px;
+        }
+
+        input {
+          width: 100%;
+        }
+      }
+    }
+
+    &_save {
+      height: 10%;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      p {
+        width: 100%;
+      }
+
+      button {
+        width: 20%;
+      }
+    }
+  }
+}

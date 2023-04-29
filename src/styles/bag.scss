@@ -1,0 +1,139 @@
+@import 'var';
+
+.bag {
+  width: 100%;
+  position: relative;
+  user-select: none;
+
+  &_list,
+  &_checkout {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 0;
+
+    small {
+      color: $text-secondary;
+    }
+  }
+
+  &_list {
+    padding-right: 60px;
+
+    &-header {
+      padding-bottom: 10px;
+    }
+
+    &-total {
+      padding: 20px 0;
+    }
+  }
+
+  &_checkout {
+    padding-left: 60px;
+    border-left: 1px solid $sf-2;
+
+    &-header {
+      padding-bottom: 10px;
+    }
+
+    &-input {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      
+      .adress {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .details {
+        display: flex;
+        gap: 10px;
+    
+        input, select {
+          width: 50%;
+        }
+      }
+
+      .telp {
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .checkout {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 0;
+      }
+    }
+  }
+}
+
+.sucess {
+  width: 100%;
+  height: calc(100vh - 100px); 
+  position: relative;
+  user-select: none;
+
+  &_content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+    padding: 0 156px;
+  }
+}
+
+@media screen and (min-width: 1440px ) {
+  .bag {
+    height: calc(100vh - 100px);
+    padding: 0 156px;
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 1439px) and (min-width: 1240px) {
+  .bag {
+    height: calc(100vh - 100px);    
+    padding: 0 200px;
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 1239px) and (min-width: 905px) {
+  .bag {
+    height: calc(100vh - 95px);        
+    padding: 0 76px;
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 904px) {
+  .bag {
+    height: calc(100vh - 90px);            
+    padding: 0 60px;
+    
+    &_list,
+    &_checkout {
+      padding: 0;
+      width: 100%;
+      height: fit-content;
+      border: none;
+    }
+
+    &_list {
+      padding: 40px 0;
+    }
+
+    &_checkout {
+      padding-bottom: 40px;
+    };
+  }
+}
