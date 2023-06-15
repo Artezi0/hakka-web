@@ -13,9 +13,10 @@ export default function Navbar({ length }) {
         <div className="submenu_list">
           <ul className="submenu_list-menus">
             <li><Link className="mono3" href="/" onClick={() => isSubmenu(false)}>Home</Link></li>
-            <li><Link className="mono3" href="/bag" onClick={() => isSubmenu(false)}>Shopping bag (0)</Link></li>
-            <li className="mono3">Search item</li>
-            <li><Link className="mono3" href="/account" onClick={() => isSubmenu(false)}>Account</Link></li>
+            <li><Link className="mono3" href="/sales" onClick={() => isSubmenu(false)}>Sales</Link></li>
+            <li><Link className="mono3" href="/" onClick={() => isSubmenu(false)}>Shopping bag (0)</Link></li>
+            <li className="mono3">Hakka Paper</li>
+            <li><Link className="mono3" href="/" onClick={() => isSubmenu(false)}>Account</Link></li>
           </ul>
           <li className="submenu_list-btn mono3" onClick={() => isSubmenu(false)}>Close</li>
         </div>
@@ -38,12 +39,12 @@ export default function Navbar({ length }) {
             <ul className="menus_shop-menu">
               <li><Link className="mono3" href="/">Home</Link></li>
               <li><Link className="mono3" href="/sales">Sales</Link></li>
-              <li><Link className="mono3" href="/bag">Shopping bag ({length})</Link></li>
+              <li><Link className="mono3" href="/">Shopping bag ({length})</Link></li>
             </ul>
           </div>
           <div className="menus_others">
-            <li className="mono3">Search Item</li>
-            <li><Link className="mono3" href="/account">Account</Link></li>
+            <li className="mono3">Hakka Paper</li>
+            <li><Link className="mono3" href="/">Account</Link></li>
           </div>
           <div className="menus_submenu">
             <li className="mono3" onClick={() => isSubmenu(true)}>Menu</li>

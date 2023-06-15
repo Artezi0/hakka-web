@@ -4,9 +4,15 @@ import Image from 'next/legacy/image'
 import { onSnapshot, collection } from 'firebase/firestore'
 import { db } from '@/context/firebase'
 import Link from 'next/link'
+import Footer from '@/components/Footer'
+import CurrencyInput from 'react-currency-input-field';
 
-export default function Home({ blogs, campaigns }) {
+export default function Home({ blogs, campaigns, products }) {
   let featured = blogs.filter((blog) => { return blog.isFeatured == true })
+  let newArrival = products.filter((product) => {
+    let date = new Date().getDate()
+    return product.dateAdded - date < 6
+  })
 
   return (
     <>
@@ -27,59 +33,85 @@ export default function Home({ blogs, campaigns }) {
                   alt='campaign'
                   layout='fill'
                   objectFit='contain'
-                  priority={true}
+                  placeholder='blur'
+                  blurDataURL={image}
                 />
               </li>
             )
           })}
         </ul>
-        <section className='home_blog'>
-          <div className='header'>
-            <h2 className='mono3'>Hakka Paper</h2>
-          </div>
-          <div className='slider'>
-            {featured.slice(0, 4).map(({ uid, title, dateCreated, thumbnail }) => {
-              return (
-                <Link className='blog' 
-                  key={uid} 
-                  href={'/blog/' + uid}
-                > 
-                  <div className='blog_img'>
-                    <Image 
-                      src={thumbnail} 
-                      alt="thumbnail"
-                      layout='fill'
-                      objectFit='cover'
-                      placeholder='blur'
-                      blurDataURL={thumbnail}
-                    />
-                  </div>
-                  <p>{dateCreated}</p>
-                  <h5 className='blog_title'>{title}</h5>
-                </Link>
-              )
-            })}
-          </div>
-        </section>
-        <section className='home_featured'>
-          <div className='header'>
-            <h2 className='mono3'>Featured</h2>
-          </div>
-        </section>
-        <section className='home_new'>
-          <div className='header'>
-            <h2 className='mono3'>New Arrival</h2>
-          </div>
-          <div className='card1'></div>
-        </section>
+        {featured.length > 0 && 
+          <section className='home_blog'>
+            <div className='header'>
+              <h2 className='mono3'>Hakka Paper</h2>
+            </div>
+            <div className='container'>
+              {featured.slice(0, 4).map(({ uid, title, dateCreated, thumbnail }) => {
+                return (
+                  <Link className='container_blog' key={uid} href={'/blog/' + uid}> 
+                    <div className='container_blog-img'>
+                      <Image
+                        src={thumbnail} 
+                        alt="thumbnail"
+                        layout='fill'
+                        objectFit='cover'
+                        placeholder='blur'
+                        blurDataURL={thumbnail}
+                      />
+                    </div>
+                    <small className='container_blog-date'>{dateCreated}</small>
+                    <h5 className='container_blog-title'>{title}</h5>
+                  </Link>
+                )
+              })}
+            </div>
+          </section>
+        }
+        {products.length > 0 &&
+          <section className='home_products'>
+            <div className='header'>
+              <h2 className='mono3'>New Arrival</h2>
+            </div>
+            <div className='container'>
+              {newArrival.slice(0, 16).map(({ uid, name, image, price, description, link}) => {
+                return (
+                  <Link className='productCard' key={uid} href={link}> 
+                      <div className='productCard_img'>
+                        <Image
+                          src={image} 
+                          alt="product"
+                          layout='fill'
+                          objectFit='cover'
+                          placeholder='blur'
+                          blurDataURL={image}
+                        />
+                      </div>
+                      <small className='tag'>New Arrival</small>
+                      <h6>{name}</h6>
+                      <small className='footnote'>{description}</small>
+                      <CurrencyInput className='price'
+                        prefix="Rp" 
+                        value={price} 
+                        decimalSeparator="," 
+                        groupSeparator="."   
+                        disabled
+                      />
+                    </Link>
+                  )
+              })}
+            </div>
+          </section>
+        } 
       </main>
-    </>
+      <Footer />
+      </>
   )
 }
 
 export async function getStaticProps() {
   let blogs = []
   let campaigns = []
+  let products = []
 
   onSnapshot(collection(db, 'campaign'), (query) => {
     query.forEach(function(campaign) {
@@ -93,8 +125,14 @@ export async function getStaticProps() {
     })
   })
 
+  onSnapshot(collection(db, 'product'), (query) => {
+    query.forEach(function(product) {
+      products.push(product.data())
+    })
+  })
+
   await delay(1500)
-  return { props: { blogs, campaigns } }
+  return { props: { blogs, campaigns, products } }
 }
 
 function delay(time) {
