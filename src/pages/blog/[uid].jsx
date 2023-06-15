@@ -5,9 +5,8 @@ import Head from "next/head"
 import Image from "next/legacy/image"
 import Footer from "@/components/Footer"
 import Link from "next/link"
-import { Carousel } from '@mantine/carousel';
 
-export default function Blog({ blog, blogs }) {  
+export default function Blog({ blog }) {  
   return (
     <>
       <Head>
@@ -38,7 +37,7 @@ export default function Blog({ blog, blogs }) {
           />
          </div>
         <section className="blog_body" dangerouslySetInnerHTML={{__html: blog.content}} id="body"></section>
-        <section className="blog_others">
+        {/* <section className="blog_others">
           <div className='header'>
             <h2 className='mono3'>Other Article</h2>
           </div>
@@ -71,7 +70,7 @@ export default function Blog({ blog, blogs }) {
             )
           })}
           </Carousel>
-        </section>
+        </section> */}
       </main>
       <Footer />
     </>
@@ -101,13 +100,6 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
   const uid = context.params.uid
   let blog = []
-  let blogs = []
-   
-  onSnapshot(collection(db, 'blog'), (query) => {
-    query.forEach(function(blog) {
-      blogs.push(blog.data())
-    })
-  })
 
   onSnapshot(doc(db, 'blog', uid), (query) => {
     blog = query.data()
@@ -117,7 +109,6 @@ export async function getStaticProps(context) {
   return {
     props: {
       blog,
-      blogs
     }
   }
 }
