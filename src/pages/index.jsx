@@ -103,7 +103,7 @@ export default function Home({ blogs, campaigns, products }) {
               })}
             </div>
             <div className='home_products-btn'>
-              <Link href="/sales" className="mono3">See All &#8594;</Link>
+              <Link href="/sales" className="mono3">See All Products &#8594;</Link>
             </div>
           </section>
         } 

@@ -2,266 +2,154 @@
 
 .footer { 
   z-index: 90;
+  height: 50vh;
+  width: 100%;
   position: relative;
-  bottom: 0;
-  
-  a {    
-    &:hover {
-      color: $red-primary;
+  background: $text-primary;
+  user-select: none;
+
+  &_header {
+    height: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    
+    &-info {
+      
+      h2 {
+        color: $sf-1;
+      }
+      
+      span {
+        padding-top: 20px;
+        display: flex;
+        gap: 20px;
+      }
+    }
+
+    &-list {
+      text-align: right;      
+      color: $text-secondary;
+      
+      a {
+        color: inherit;
+
+        &:hover {
+          color: $sf-4;
+        }
+      }
+    }
+  }
+
+  &_socials {
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &-social {
+      display: flex;
+      gap: 20px;
+
+      .mono3 {
+        color: $text-secondary;
+
+        a {  
+          color: inherit;
+          font-size: 20px;
+
+          &:hover {
+            color: $sf-4;
+          }
+        }
+      }
+    }
+
+    &-watermark {
+      display: flex;
+      gap: 20px;
+      
+      a {
+        color: inherit;
+
+        &:hover {
+          color: $sf-4;
+        }
+      }
     }
   }
 }
 
 @media screen and (min-width: 1440px ) {
   .footer {
-    height: 300px;
-    display: flex;
-    justify-content: center;
-    background: $text-primary;
-    color: $sf-1;
-    padding: 40px 156px;
-    user-select: none;
-  
-    &_desc,
-    &_list {
-      width: 50%;
-    }
-  
-    &_desc {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;    
-      gap: 10px;
-  
-      &-body {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-  
-        a { text-decoration: none; }
-        small { color: $text-secondary; }
-        p {
-          width: 100%;
-          text-align: justify;
-        }
-  
-        .subheading {
-          display: flex;
-          gap: 10px;
-          
-        }
-      }
-    }
-  
-    &_list {
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-  
-      ul {
-        text-align: right;
-        color: $text-secondary;
-  
-        p {
-          padding-bottom: 10px;
-        }
-  
-        a {
-          color: inherit;
-        }
-      }
-    }
+    padding: 40px 156px;  
   }
 }
 
 @media screen and (max-width: 1439px) and (min-width: 1240px) {
   .footer {
-    height: 300px;
-    display: flex;
-    justify-content: center;
-    background: $text-primary;
-    color: $sf-1;
     padding: 40px 200px;
-    user-select: none;
-  
-    &_desc,
-    &_list {
-      width: 50%;
-    }
-  
-    &_desc {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;    
-      gap: 10px;
-  
-      &-body {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-  
-        a { text-decoration: none; }
-        small { color: $text-secondary; }
-        p {
-          width: 100%;
-          text-align: justify;
-        }
-  
-        .subheading {
-          display: flex;
-          gap: 10px;
-          
-        }
-      }
-    }
-  
-    &_list {
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-  
-      ul {
-        text-align: right;
-        color: $text-secondary;
-  
-        p {
-          padding-bottom: 10px;
-        }
-  
-        a {
-          color: inherit;
-        }
-      }
-    }
   }
 }
 
 @media screen and (max-width: 1239px) and (min-width: 905px) {
   .footer {
-    height: 400px;
-    display: flex;
-    justify-content: center;
-    background: $text-primary;
-    color: $sf-1;
     padding: 40px 76px;
-    user-select: none;
-  
-    &_desc,
-    &_list {
-      width: 50%;
+  }
+}
+
+@media screen and (max-width: 904px) and (min-width: 701px) {
+  .footer {
+    padding: 40px 60px;
+  }
+}
+
+@media screen and (max-width: 700px) and (min-width: 401px) {
+  .footer {
+    height: 60vh;
+    padding: 20px 40px;
+
+    &_header {
+      grid-template-columns: 1fr;
+
+      &-list {
+        display: none;
+      }
     }
-  
-    &_desc {
-      height: 100%;
-      display: flex;
+
+    &_socials {
       flex-direction: column;
-      justify-content: center;    
-      gap: 10px;
-  
-      &-body {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-  
-        a { text-decoration: none; }
-        small { color: $text-secondary; }
-        p {
-          width: 100%;
-          text-align: justify;
-        }
-  
-        .subheading {
-          display: flex;
-          gap: 10px;
-          
-        }
-      }
-    }
-  
-    &_list {
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-  
-      ul {
-        text-align: right;
-        color: $text-secondary;
-  
-        p {
-          padding-bottom: 10px;
-        }
-  
-        a {
-          color: inherit;
-        }
-      }
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 20px;
     }
   }
 }
 
-@media screen and (max-width: 904px) {
+@media screen and (max-width: 400px) {
   .footer {
-    height: 500px;
-    display: flex;
-    justify-content: center;
-    background: $text-primary;
-    color: $sf-1;
-    padding: 40px 60px;
-    user-select: none;
-  
-    &_desc,
-    &_list {
-      width: 50%;
-    }
-  
-    &_desc {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;    
-      gap: 10px;
-  
-      &-body {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-  
-        a { text-decoration: none; }
-        small { color: $text-secondary; }
-        p {
-          width: 100%;
-          text-align: justify;
-        }
-  
-        .subheading {
-          display: flex;
-          gap: 10px;
-          
-        }
+    height: 80vh;
+    padding: 40px;
+
+    &_header {
+      grid-template-columns: 1fr;
+
+      &-list {
+        display: none;
       }
     }
-  
-    &_list {
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-  
-      ul {
-        text-align: right;
-        color: $text-secondary;
-  
-        p {
-          padding-bottom: 10px;
-        }
-  
-        a {
-          color: inherit;
+    
+    &_socials {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 20px;
+
+      &-social {
+        .mono3 {  
+          a {  
+            font-size: 30px;
+          }
         }
       }
     }

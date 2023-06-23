@@ -42,10 +42,6 @@ a {
   font-family: inherit;
   font-weight: 600;
   font-size: 20px;
-
-  &:hover {
-    color: $red-primary;
-  }
 }
 
 p {
@@ -246,6 +242,15 @@ h6 {
   h6 {
     color: $text-primary;
   }
+
+  @media screen and (max-width: 400px) {
+    height: 16em;
+    width: 10em;
+
+    &_img {
+      height: 10em;
+    }
+  }
 }
   
 .blogCard {
@@ -266,8 +271,7 @@ h6 {
  
   &_img {
     width: 100%;
-    min-height: 12em;
-    max-height: 15em;
+    min-height: 30vh;
     position: relative;
     overflow: hidden;
     display: flex;
@@ -339,12 +343,6 @@ input {
   &[type=number] {
     -moz-appearance: textfield;
   }
-}
-
-
-.header {
-  padding: 20px 0;
-  width: 100%;
 }
 
 .react-select-container {
