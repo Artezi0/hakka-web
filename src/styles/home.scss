@@ -106,7 +106,7 @@
     
     &_campaign {
       &-container {
-        height: 40vh;
+        height: 25vh;
       }
     }
     
@@ -118,8 +118,12 @@
     }
     
     &_products {
+      padding-bottom: 20px;
+
       .container {
-        grid-template-columns: 1fr 1fr 1fr;
+        display: flex;
+        width: 100%;
+        overflow-y: scroll;
       }
     }
   }
@@ -143,8 +147,12 @@
     }
 
     &_products {
+      padding-bottom: 20px;
+
       .container {
-        grid-template-columns: 1fr 1fr 1fr;
+        display: flex;
+        width: 100%;
+        overflow-y: scroll;
       }
     }
   }

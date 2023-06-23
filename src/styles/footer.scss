@@ -100,13 +100,26 @@
 
 @media screen and (max-width: 904px) and (min-width: 701px) {
   .footer {
-    padding: 40px 60px;
+    height: 30vh;
+    padding: 0 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    justify-content: center;    
+    
+    &_header {
+      height: fit-content;
+    }
+
+    &_socials {
+      height: fit-content;
+    }
   }
 }
 
 @media screen and (max-width: 700px) and (min-width: 401px) {
   .footer {
-    height: 60vh;
+    height: 40vh;
     padding: 20px 40px;
 
     &_header {
@@ -128,7 +141,7 @@
 
 @media screen and (max-width: 400px) {
   .footer {
-    height: 80vh;
+    height: 60vh;
     padding: 40px;
 
     &_header {
