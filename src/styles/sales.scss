@@ -3,7 +3,26 @@
 .sales {
   width: 100%;
   height: fit-content;
+  min-height: 100vh;
   position: relative;
+
+  .header {
+    padding-top: 0;
+  }
+
+  &_search {
+    padding-bottom: 40px;
+
+    input {
+      width: 100%;
+    }
+  }
+
+  &_rows {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 20px;
+  }
 }
 
 @media screen and (min-width: 1440px ) {
@@ -21,11 +40,29 @@
 @media screen and (max-width: 1239px) and (min-width: 905px) {
   .sales {
     padding: 60px 76px;
+    
+    &_rows {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
   }
 }
 
-@media screen and (max-width: 904px) {
+@media screen and (max-width: 904px) and (min-width: 701px) {
   .sales {
     padding: 60px;
+
+    &_rows {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .sales {
+    padding: 60px;
+
+    &_rows {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 }

@@ -13,7 +13,10 @@
     "@mantine/core": "^6.0.8",
     "@mantine/hooks": "^6.0.8",
     "@mantine/tiptap": "^6.0.8",
+    "@next/bundle-analyzer": "^13.4.6",
     "@next/font": "13.1.6",
+    "@react-spring/parallax": "^9.7.2",
+    "@react-spring/web": "^9.7.2",
     "@tabler/icons-react": "^2.16.0",
     "@tiptap/extension-heading": "^2.0.3",
     "@tiptap/extension-link": "^2.0.3",
@@ -39,6 +42,7 @@
     "react-simple-image-slider": "^2.4.1",
     "react-slick": "^0.29.0",
     "react-uuid": "^2.0.0",
-    "sass": "^1.58.1"
+    "sass": "^1.58.1",
+    "sharp": "^0.32.1"
   }
 }

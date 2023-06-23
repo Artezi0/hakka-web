@@ -33,8 +33,7 @@ export default function Home({ blogs, campaigns, products }) {
                   alt='campaign'
                   layout='fill'
                   objectFit='contain'
-                  placeholder='blur'
-                  blurDataURL={image}
+                  priority={true}
                 />
               </li>
             )
@@ -48,8 +47,8 @@ export default function Home({ blogs, campaigns, products }) {
             <div className='container'>
               {featured.slice(0, 4).map(({ uid, title, dateCreated, thumbnail }) => {
                 return (
-                  <Link className='container_blog' key={uid} href={'/blog/' + uid}> 
-                    <div className='container_blog-img'>
+                  <Link className='blogCard' key={uid} href={'/blogs/blog/' + uid}> 
+                    <div className='blogCard_img'>
                       <Image
                         src={thumbnail} 
                         alt="thumbnail"
@@ -59,11 +58,14 @@ export default function Home({ blogs, campaigns, products }) {
                         blurDataURL={thumbnail}
                       />
                     </div>
-                    <small className='container_blog-date'>{dateCreated}</small>
-                    <h5 className='container_blog-title'>{title}</h5>
+                    <small className='blogCard_date footnote'>{dateCreated}</small>
+                    <h6 className='blogCard_title'>{title}</h6>
                   </Link>
                 )
               })}
+            </div>
+            <div className='home_blog-btn'>
+              <Link href="/blogs" className="mono3">More Article &#8594;</Link>
             </div>
           </section>
         }
@@ -73,7 +75,7 @@ export default function Home({ blogs, campaigns, products }) {
               <h2 className='mono3'>New Arrival</h2>
             </div>
             <div className='container'>
-              {newArrival.slice(0, 16).map(({ uid, name, image, price, description, link}) => {
+              {newArrival.slice(0, 11).map(({ uid, name, image, price, description, link}) => {
                 return (
                   <Link className='productCard' key={uid} href={link}> 
                       <div className='productCard_img'>
@@ -99,6 +101,9 @@ export default function Home({ blogs, campaigns, products }) {
                     </Link>
                   )
               })}
+            </div>
+            <div className='home_products-btn'>
+              <Link href="/sales" className="mono3">See All &#8594;</Link>
             </div>
           </section>
         } 

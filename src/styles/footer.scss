@@ -1,8 +1,9 @@
 @import 'var';
 
 .footer { 
-  z-index: 100;
+  z-index: 90;
   position: relative;
+  bottom: 0;
   
   a {    
     &:hover {

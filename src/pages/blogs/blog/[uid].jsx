@@ -1,12 +1,16 @@
 import { onSnapshot, doc, collection } from "firebase/firestore"
 import { db } from "@/context/firebase"
-import Navbar from "../../components/Navbar"
+import Navbar from "../../../components/Navbar"
 import Head from "next/head"
 import Image from "next/legacy/image"
 import Footer from "@/components/Footer"
 import Link from "next/link"
+import { Parallax, ParallaxLayer } from "@react-spring/parallax"
+import { useRef } from "react"
 
 export default function Blog({ blog }) {  
+  const ref = useRef()
+  
   return (
     <>
       <Head>
@@ -16,16 +20,16 @@ export default function Blog({ blog }) {
       </Head>
       <Navbar />
       <main className="blog">
-        <section className="blog_header">
+        <div className="blog_header">
           <div className="blog_header-info">
-            <Link href="/" className="link mono3">&#8592; Go Back</Link>
+            <Link href="/" className="mono3">&#8592; Go Back</Link>
             <span>
               <p className="mono3">{blog.dateCreated}</p>
               <p className="mono3">Article by {blog.author}</p>
             </span>
           </div>
           <h3>{blog.title}</h3>
-        </section>
+        </div>
         <div className="blog_thumbnail">
           <Image 
             src={blog.thumbnail} 
@@ -36,12 +40,12 @@ export default function Blog({ blog }) {
             blurDataURL={blog.thumbnail}
           />
          </div>
-        <section className="blog_body" dangerouslySetInnerHTML={{__html: blog.content}} id="body"></section>
-        {/* <section className="blog_others">
-          <div className='header'>
+        <div className="blog_body" dangerouslySetInnerHTML={{__html: blog.content}} id="body"></div>
+        <div className="blog_others">
+          {/* <div className='header'>
             <h2 className='mono3'>Other Article</h2>
-          </div>
-          <Carousel
+          </div> */}
+          {/* <Carousel
             className="container" 
             slideGap={20}
             slideSize={1} 
@@ -69,8 +73,8 @@ export default function Blog({ blog }) {
               </Carousel.Slide>
             )
           })}
-          </Carousel>
-        </section> */}
+          </Carousel> */}
+        </div>
       </main>
       <Footer />
     </>

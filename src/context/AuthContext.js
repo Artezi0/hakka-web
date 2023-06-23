@@ -161,10 +161,10 @@ export function AuthContextProvider({ children }) {
       signUp,
       signIn,
       logout,
-      editUser, 
-      resetPass,
-      avatarUpload,
-      userDelete,
+      // editUser, 
+      // resetPass,
+      // avatarUpload,
+      // userDelete,
 
       // Database fetch
       campaign,
