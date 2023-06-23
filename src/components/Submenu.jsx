@@ -14,7 +14,7 @@ export default function Submenu({ isSubmenu }) {
         <ul className="submenu_list-menus">
           <li><Link className="mono3" href="/" onClick={() => isSubmenu(false)}>Home</Link></li>
           <li><Link className="mono3" href="/sales" onClick={() => isSubmenu(false)}>Product Sales</Link></li>
-          <li className="mono3">Hakka Paper</li>
+          <li><Link className="mono3" href="/blogs" onClick={() => isSubmenu(false)}>Hakka Paper</Link></li>
           <li><Link className="mono3" href="/" onClick={() => isSubmenu(false)}>Account</Link></li>
         </ul>
         <li className="submenu_list-btn mono3" onClick={() => isSubmenu(false)}>Close</li>

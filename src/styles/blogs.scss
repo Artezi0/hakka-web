@@ -1,10 +1,7 @@
 @import 'var';
 
 .blogs {
-  width: 100%;
-  height: fit-content;
   min-height: 50vh;
-  position: relative;
   
   .header {
     padding-top: 0;
@@ -26,9 +23,6 @@
 }
 
 .blog {
-  width: 100%;
-  height: fit-content;
-
   &_header {
     user-select: none;
     display: flex;
