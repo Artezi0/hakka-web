@@ -1,5 +1,6 @@
 {
   "name": "hakka",
+  "author": "hakka fits",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -15,8 +16,6 @@
     "@mantine/tiptap": "^6.0.8",
     "@next/bundle-analyzer": "^13.4.6",
     "@next/font": "13.1.6",
-    "@react-spring/parallax": "^9.7.2",
-    "@react-spring/web": "^9.7.2",
     "@tabler/icons-react": "^2.16.0",
     "@tiptap/extension-heading": "^2.0.3",
     "@tiptap/extension-link": "^2.0.3",
@@ -39,7 +38,6 @@
     "react-icons": "^4.8.0",
     "react-phone-number-input": "^3.2.19",
     "react-select": "^5.7.0",
-    "react-simple-image-slider": "^2.4.1",
     "react-slick": "^0.29.0",
     "react-uuid": "^2.0.0",
     "sass": "^1.58.1",

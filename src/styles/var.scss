@@ -212,9 +212,8 @@ h6 {
 }
 
 .productCard {
-  position: relative;
   height: 18em;
-  width: 12em;
+  width: 15em;
   user-select: none;
   text-decoration: none;
   cursor: pointer;
@@ -224,7 +223,7 @@ h6 {
 
   &_img {
     width: 100%;
-    height: 11em;
+    height: 12em;
     position: relative;
     overflow: hidden;
     border-radius: 5px;
@@ -280,7 +279,7 @@ h6 {
     margin-bottom: 10px;
     
     @media screen and (max-width: 904px) {
-      min-height: 15vh;
+      min-height: 20vh;
     }
   }
 
@@ -441,5 +440,31 @@ input {
   &:focus {
     border: none;
     outline: none;
+  }
+}
+
+.slider {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  button {
+    height: fit-content;
+    width: fit-content;
+  }
+
+  .slick-list {
+    width: 100%;
+    overflow: hidden;
+
+    .slick-track {
+      display: flex;
+      gap: 20px;
+
+      .slick-slide {
+        width: 15em !important;
+      }
+    }
   }
 }

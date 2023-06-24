@@ -49,6 +49,7 @@
 
     &-social {
       display: flex;
+      align-items: center;
       gap: 20px;
 
       .mono3 {
@@ -161,7 +162,7 @@
       &-social {
         .mono3 {  
           a {  
-            font-size: 30px;
+            font-size: 20px;
           }
         }
       }

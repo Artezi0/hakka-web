@@ -1,11 +1,12 @@
-import Head from 'next/head'
-import Navbar from '../components/Navbar'
-import Image from 'next/legacy/image'
-import { onSnapshot, collection } from 'firebase/firestore'
-import { db } from '@/context/firebase'
 import Link from 'next/link'
+import Head from 'next/head'
+import Image from 'next/legacy/image'
+import { db } from '@/context/firebase'
+import Navbar from '../components/Navbar'
 import Footer from '@/components/Footer'
-import CurrencyInput from 'react-currency-input-field';
+import CurrencyInput from 'react-currency-input-field'
+import { onSnapshot, collection } from 'firebase/firestore'
+import Slider from 'react-slick'
 
 export default function Home({ blogs, campaigns, products }) {
   let featured = blogs.filter((blog) => { return blog.isFeatured == true })
@@ -13,6 +14,17 @@ export default function Home({ blogs, campaigns, products }) {
     let date = new Date().getDate()
     return product.dateAdded - date < 6
   })
+
+  const settings = {
+    infinite: false,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    arrows: false,
+    draggable: true,
+    swipe: true,
+    swipeToSlide: true,
+  };
 
   return (
     <>
@@ -75,32 +87,34 @@ export default function Home({ blogs, campaigns, products }) {
               <h2 className='mono3'>New Arrival</h2>
             </div>
             <div className='container'>
-              {newArrival.slice(0, 11).map(({ uid, name, image, price, description, link}) => {
-                return (
-                  <Link className='productCard' key={uid} href={link}> 
-                      <div className='productCard_img'>
-                        <Image
-                          src={image} 
-                          alt="product"
-                          layout='fill'
-                          objectFit='cover'
-                          placeholder='blur'
-                          blurDataURL={image}
+              <Slider {...settings} className='slider'>
+                {newArrival.slice(0, 11).map(({ uid, name, image, price, description, link}) => {
+                  return (
+                    <Link className='productCard' key={uid} href={link}> 
+                        <div className='productCard_img'>
+                          <Image
+                            src={image} 
+                            alt="product"
+                            layout='fill'
+                            objectFit='cover'
+                            placeholder='blur'
+                            blurDataURL={image}
+                          />
+                        </div>
+                        <small className='tag'>New Arrival</small>
+                        <p>{name}</p>
+                        <p className='footnote'>{description}</p>
+                        <CurrencyInput className='price'
+                          prefix="Rp" 
+                          value={price} 
+                          decimalSeparator="," 
+                          groupSeparator="."   
+                          disabled
                         />
-                      </div>
-                      <small className='tag'>New Arrival</small>
-                      <h6>{name}</h6>
-                      <small className='footnote'>{description}</small>
-                      <CurrencyInput className='price'
-                        prefix="Rp" 
-                        value={price} 
-                        decimalSeparator="," 
-                        groupSeparator="."   
-                        disabled
-                      />
-                    </Link>
-                  )
-              })}
+                      </Link>
+                    )
+                })}
+              </Slider>
             </div>
             <div className='home_products-btn'>
               <Link href="/sales" className="mono3">See All Products &#8594;</Link>

@@ -5,7 +5,6 @@ import Head from "next/head"
 import Image from "next/legacy/image"
 import Footer from "@/components/Footer"
 import Link from "next/link"
-import { Parallax, ParallaxLayer } from "@react-spring/parallax"
 import { useRef } from "react"
 
 export default function Blog({ blog }) {  

@@ -46,8 +46,8 @@ export default function Account({ products }) {
                   </div>
                   <div className='productCard_info'>
                     {dateAdded - date < 6 && <small className='tag'>New Arrival</small>}
-                    <h6>{name}</h6>
-                    <small className='footnote'>{description}</small>
+                    <p>{name}</p>
+                    <p className='footnote'>{description}</p>
                     <CurrencyInput className='price'
                       prefix="Rp" 
                       value={price} 
