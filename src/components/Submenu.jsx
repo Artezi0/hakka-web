@@ -20,7 +20,7 @@ export default function Submenu({ isSubmenu }) {
         <li className="submenu_list-btn mono3" onClick={() => isSubmenu(false)}>Close</li>
       </div>
       <div className="submenu_footer">
-        <small className="footnote">HAKKA 2023</small>
+        <small className="footnote">KOTAK ⬤ BAJU 2023</small>
       </div>
     </div>
   )

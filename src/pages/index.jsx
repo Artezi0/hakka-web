@@ -29,7 +29,7 @@ export default function Home({ blogs, campaigns, products }) {
   return (
     <>
       <Head>
-        <title>HAKKA - Kits With Fresh-Mixed Outfit</title>
+        <title>KOTAK ⬤ BAJU</title>
         <meta name="description" content="Kits with fresh-mixed outfit. HAKKA Drop soon on February 23th" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>

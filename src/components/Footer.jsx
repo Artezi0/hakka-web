@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className='footer'>
         <div className='footer_header'>
           <div className='footer_header-info'>
-            <h2>HAKKA ⬤ Kits with fresh-mixed outfit</h2>
+            <h2>KOTAK ⬤ BAJU</h2>
             <span>
               <Link href="#"><p className="footnote">Terms of condition</p></Link>
               <Link href="#"><p className="footnote">Privacy Policy</p></Link>
@@ -27,7 +27,7 @@ export default function Footer() {
             <li className='mono3'><Link href="https://wa.me/6285643712032"><FaWhatsapp /></Link></li>
           </ul>
           <div className="footer_socials-watermark">
-            <p className="footnote">2023 HAKKA, Inc. All Rights Reserved</p>
+            <p className="footnote">2023 KotakBaju, Inc. All Rights Reserved</p>
             <p className="footnote">Website by <Link className="footnote" href="https://www.instagram.com/artezio_">Artezio</Link></p>
           </div>
         </div>

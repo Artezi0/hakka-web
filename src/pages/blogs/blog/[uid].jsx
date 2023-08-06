@@ -13,7 +13,7 @@ export default function Blog({ blog }) {
   return (
     <>
       <Head>
-        <title>HAKKA - {blog.title}</title>
+        <title>KOTAK ⬤ BAJU - {blog.title}</title>
         <meta name="description" content="Kits with fresh-mixed outfit. HAKKA Drop soon on February 23th" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>

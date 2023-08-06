@@ -17,7 +17,7 @@ export default function Account({ products }) {
   return (
     <>
       <Head>
-        <title>HAKKA - SALES</title>
+        <title>KOTAK ⬤ BAJU - SALES</title>
         <meta name="description" content="Kits with fresh-mixed outfit. HAKKA Drop soon on February 23th" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
