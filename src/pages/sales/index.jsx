@@ -27,7 +27,7 @@ export default function Account({ products }) {
           <h2 className='mono3'>Sales</h2>
         </div>
         <div className='sales_search'>
-          <input type="text" className='searchbar mono1' placeholder='Search Article' onChange={(e) => setSearch(e.target.value)} />
+          <input type="text" className='searchbar mono1' placeholder='Search Product' onChange={(e) => setSearch(e.target.value)} />
         </div>
         <div className='sales_rows'>
           {sortedProducts.map(({ uid, name, image, price, description, link, dateAdded}) => {
@@ -45,7 +45,7 @@ export default function Account({ products }) {
                     />
                   </div>
                   <div className='productCard_info'>
-                    {dateAdded - date < 6 && <small className='tag'>New Arrival</small>}
+                    {dateAdded - date < 10 && <small className='tag'>New Arrival</small>}
                     <p>{name}</p>
                     <p className='footnote'>{description}</p>
                     <CurrencyInput className='price'

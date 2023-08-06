@@ -20,7 +20,6 @@
 
   &_rows {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     gap: 20px;
   }
 }
@@ -28,12 +27,20 @@
 @media screen and (min-width: 1440px ) {
   .sales {
     padding: 60px 156px;
+
+    &_rows {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
   }
 }
 
 @media screen and (max-width: 1439px) and (min-width: 1240px) {
   .sales {
     padding: 60px 200px;
+
+    &_rows {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
   }
 }
 
@@ -62,7 +69,7 @@
     padding: 60px;
 
     &_rows {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
     }
   }
 }

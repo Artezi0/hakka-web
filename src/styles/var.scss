@@ -213,7 +213,7 @@ h6 {
 
 .productCard {
   height: 18em;
-  width: 15em;
+  width: 12em;
   user-select: none;
   text-decoration: none;
   cursor: pointer;
@@ -231,11 +231,9 @@ h6 {
   }
 
   &_info {
-    height: 6em;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 5px;
   }
   
   h6 {

@@ -12,7 +12,7 @@ export default function Home({ blogs, campaigns, products }) {
   let featured = blogs.filter((blog) => { return blog.isFeatured == true })
   let newArrival = products.filter((product) => {
     let date = new Date().getDate()
-    return product.dateAdded - date < 6
+    return product.dateAdded - date < 10
   })
 
   const settings = {
@@ -81,7 +81,7 @@ export default function Home({ blogs, campaigns, products }) {
             </div>
           </section>
         }
-        {products.length > 0 &&
+        {newArrival.length > 0 &&
           <section className='home_products'>
             <div className='header'>
               <h2 className='mono3'>New Arrival</h2>
